@@ -15,9 +15,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vitest/globals", "vite/client"]
+    "types": []
   },
-  "include": ["src", "tests", "index.html"]
+  "include": ["src", "index.html"]
 }
 
 
