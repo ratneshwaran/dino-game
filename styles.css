@@ -1,0 +1,65 @@
+:root {
+  --bg: #f8f8f8;
+  --fg: #111;
+  --ui: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #090a0b;
+    --fg: #f2f2f2;
+    --ui: #ddd;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+#app {
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+#game {
+  width: min(100vw, 100vh * 16 / 9);
+  height: calc(min(100vw, 100vh * 16 / 9) * 9 / 16);
+  image-rendering: pixelated;
+  border: 0;
+  outline: none;
+  touch-action: none;
+}
+
+#touch-controls {
+  position: fixed;
+  inset: auto 0 0 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 8px 12px 14px;
+  pointer-events: none;
+}
+
+#touch-controls button {
+  pointer-events: auto;
+  background: rgba(255,255,255,0.85);
+  color: #111;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+}
+
+.hidden { display: none; }
+
+@media (hover: none) and (pointer: coarse) {
+  #touch-controls.hidden { display: flex; }
+}
+
+
