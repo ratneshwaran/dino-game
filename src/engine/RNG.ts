@@ -19,7 +19,10 @@ export class RNG {
   }
 
   pick<T>(arr: T[]): T {
-    return arr[Math.floor(this.next() * arr.length)];
+    if (arr.length === 0) {
+      throw new Error('RNG.pick: cannot pick from empty array');
+    }
+    return arr[Math.floor(this.next() * arr.length)]!;
   }
 }
 
